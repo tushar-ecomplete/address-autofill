@@ -1,0 +1,22 @@
+# Learn more about configuring your extension at https://shopify.dev/docs/apps/checkout#configuration
+
+api_version = "2025-10"
+
+[[extensions]]
+type = "ui_extension"
+name = "google-address-autocomplete"
+handle = "google-address-autocomplete"
+metafields = []
+
+[[extensions.targeting]]
+module = "./src/index.js"
+target = "purchase.address-autocomplete.suggest"
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "google_maps_api_key"
+type = "single_line_text_field"
+name = "Google Maps API Key"
+description = "Enter your Google Maps API key for address autocomplete. Get one from https://console.cloud.google.com/"
+validations = []
+

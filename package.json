@@ -1,0 +1,29 @@
+{
+  "name": "shopify-google-address-autocomplete",
+  "version": "1.0.0",
+  "description": "Shopify Checkout Extension for Google Maps Address Autocomplete",
+  "type": "module",
+  "scripts": {
+    "dev": "shopify app dev",
+    "deploy": "shopify app deploy",
+    "sync-config": "node scripts/update-config-from-env.js",
+    "predev": "npm run sync-config",
+    "test:autocomplete": "node test-google-autocomplete.js"
+  },
+  "keywords": [
+    "shopify",
+    "checkout",
+    "extension",
+    "address",
+    "autocomplete",
+    "google-maps"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

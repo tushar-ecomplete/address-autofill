@@ -1,0 +1,36 @@
+# Learn more about configuring your extension at https://shopify.dev/docs/apps/checkout#configuration
+
+api_version = "2025-10"
+
+[[extensions]]
+
+uid = "5096b0ad-13e0-e3ae-91d3-2536e4353b36062bdb44"
+
+type = "ui_extension"
+name = "google-address-autocomplete"
+handle = "google-address-autocomplete"
+metafields = []
+
+[[extensions.targeting]]
+module = "./src/index.js"
+target = "purchase.address-autocomplete.suggest"
+access = "public"
+
+[extensions.capabilities]
+network_access = true
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "google_maps_api_key"
+type = "single_line_text_field"
+name = "Google Maps API Key"
+description = "Enter your Google Maps API key for address autocomplete. Get one from https://console.cloud.google.com/"
+validations = []
+
+[[extensions.settings.fields]]
+key = "backend_url"
+type = "single_line_text_field"
+name = "Backend URL (Optional)"
+description = "Enter your backend API URL for proxying Google Maps requests (recommended for production). Leave empty to use CORS proxy (development only)."
+validations = []
+
